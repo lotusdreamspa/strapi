@@ -446,7 +446,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    khDescription: Schema.Attribute.String;
+    khDescription: Schema.Attribute.Text;
     khTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -454,7 +454,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
       'api::treatment.treatment'
     > &
       Schema.Attribute.Private;
-    package: Schema.Attribute.DynamicZone<['functional-component.package']>;
+    packages: Schema.Attribute.DynamicZone<['functional-component.package']>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

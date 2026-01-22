@@ -28,9 +28,9 @@
       "type": "string"
     },
     "khDescription": {
-      "type": "string"
+      "type": "text"
     },
-    "package": {
+    "packages": {
       "type": "dynamiczone",
       "components": [
         "functional-component.package"
