@@ -11,18 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
     "category": {
       "type": "enumeration",
       "enum": [
         "Massage",
         "Bodycare and Beauty"
       ]
-    },
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
     },
     "khTitle": {
       "type": "string"

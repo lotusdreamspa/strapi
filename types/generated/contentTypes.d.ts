@@ -445,7 +445,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     khDescription: Schema.Attribute.String;
     khTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
