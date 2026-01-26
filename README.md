@@ -59,3 +59,10 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+##Tmp admin 
+lotusdreamspa.sr@gmail.com
+
+
+##Tmp pass
+L0tu5Dre4m!
