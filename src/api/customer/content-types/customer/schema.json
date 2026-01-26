@@ -28,6 +28,9 @@
       "relation": "oneToMany",
       "target": "api::booking.booking",
       "mappedBy": "customer"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

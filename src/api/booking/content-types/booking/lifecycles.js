@@ -27,6 +27,7 @@ module.exports = {
           const logoUrl = 'https://respected-cherry-3bae02ef27.media.strapiapp.com/logo_a65400de7e.png'; 
           const mapLink = "https://www.google.com/maps/search/?api=1&query=Lotus+Dream+Spa+Siem+Reap";
 
+          const customerName = entry.customer.name ?? 'dear Guest'
           // --- INVIO MAIL ---
           await strapi.plugins['email'].services.email.send({
             to: entry.customer.email,
@@ -49,7 +50,7 @@ module.exports = {
 
                   <div style="text-align: center; padding: 0 20px;">
                     <h2 style="color: #0AE072; margin-bottom: 5px; font-size: 32px;">Booking Confirmed</h2>
-                    <p style="color: #ffffff; font-size: 16px; margin-top: 0;">We are waiting for you, dear Guest.</p>
+                    <p style="color: #ffffff; font-size: 16px; margin-top: 0;">We are waiting for you, ${customerName}}.</p>
                   </div>
 
                   <div style="padding: 20px 40px;">
