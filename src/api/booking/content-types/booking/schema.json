@@ -40,7 +40,7 @@
         "created",
         "waiting",
         "confirmed",
-        "cencelled",
+        "cancelled",
         "done"
       ]
     },

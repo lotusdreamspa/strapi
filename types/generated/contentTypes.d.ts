@@ -442,7 +442,7 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
   };
   attributes: {
     bookingStatus: Schema.Attribute.Enumeration<
-      ['created', 'waiting', 'confirmed', 'cencelled', 'done']
+      ['created', 'waiting', 'confirmed', 'cancelled', 'done']
     >;
     cancellationNotes: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
