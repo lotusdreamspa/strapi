@@ -457,6 +457,7 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
       'api::booking.booking'
     > &
       Schema.Attribute.Private;
+    masseuse: Schema.Attribute.Relation<'manyToOne', 'api::masseuse.masseuse'>;
     notes: Schema.Attribute.Text;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
@@ -501,6 +502,35 @@ export interface ApiCustomerCustomer extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     wantsNewsletter: Schema.Attribute.Boolean;
+  };
+}
+
+export interface ApiMasseuseMasseuse extends Struct.CollectionTypeSchema {
+  collectionName: 'masseuses';
+  info: {
+    displayName: 'masseuse';
+    pluralName: 'masseuses';
+    singularName: 'masseuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::masseuse.masseuse'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1049,6 +1079,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::booking.booking': ApiBookingBooking;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::masseuse.masseuse': ApiMasseuseMasseuse;
       'api::treatment.treatment': ApiTreatmentTreatment;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

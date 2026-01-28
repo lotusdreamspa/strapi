@@ -49,6 +49,12 @@
     },
     "cancellationNotes": {
       "type": "text"
+    },
+    "masseuse": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::masseuse.masseuse",
+      "inversedBy": "bookings"
     }
   }
 }
