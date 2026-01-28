@@ -1,19 +1,19 @@
-module.exports = () => ({
+module.exports = ({ env }) => ({
   email: {
     config: {
-      provider: 'nodemailer',
+      provider: env('EMAIL_PROVIDER', 'nodemailer'), // Legge dalla variabile o usa nodemailer di default
       providerOptions: {
-        host: 'smtp.gmail.com',
-        port: 465,
+        host: env('EMAIL_SMTP_HOST', 'smtp.gmail.com'),
+        port: env.int('EMAIL_SMTP_PORT', 465),
         secure: true,
         auth: {
-          user: 'lotusdreamspa.sr@gmail.com', // La tua mail gmail
-          pass: 'kmlheebvtsltoqql', // La "App Password" di 16 caratteri generata prima
+          user: env('EMAIL_SMTP_USER'),
+          pass: env('EMAIL_SMTP_PASS'),
         },
       },
       settings: {
-        defaultFrom: 'lotusdreamspa.sr@gmail.com', // O la tua mail
-        defaultReplyTo: 'lotusdreamspa.sr@gmail.com',
+        defaultFrom: env('EMAIL_SMTP_USER'),
+        defaultReplyTo: env('EMAIL_SMTP_USER'),
       },
     },
   },
